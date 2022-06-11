@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Center,
   Flex,
   HStack,
@@ -33,13 +32,12 @@ export default function NavBar() {
       <Center>
         <Box w={{ base: "100%", md: "50%" }} px={4}>
           <Flex
-            h={{ base: 12, md: 16 }}
+            h={{ base: 14, md: 16 }}
             alignItems={"center"}
             justifyContent={"space-between"}
           >
             <IconButton
-              w={{ base: 4 }}
-              h={{ base: 9 }}
+              size={"md"}
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
               aria-label={"Open Menu"}
               display={{ md: "none" }}
@@ -52,9 +50,9 @@ export default function NavBar() {
               display={{ md: "none" }}
             >
               <NavLink href="/">Neil</NavLink>
-              <Button w={{ base: 4 }} h={{ base: 9 }} onClick={toggleColorMode}>
+              <IconButton aria-label={"Change Theme"} size={"md"} onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              </Button>
+              </IconButton>
             </HStack>
 
             <Box display={{ base: "none", md: "flex" }}>
@@ -71,14 +69,14 @@ export default function NavBar() {
                   {link.text}
                 </NavLink>
               ))}
-              <Button w={{ base: 4 }} h={{ base: 9 }} onClick={toggleColorMode}>
+              <IconButton aria-label={"Change Theme"} size={"md"} onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              </Button>
+              </IconButton>
             </HStack>
           </Flex>
 
           {isOpen ? (
-            <Box pb={4} display={{ md: "none" }}>
+            <Box pb={2} display={{ md: "none" }}>
               <Stack as={"nav"} spacing={4}>
                 {Links.map((link) => (
                   <NavLink href={link.href} key={link.text}>

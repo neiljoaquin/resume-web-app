@@ -16,7 +16,6 @@ const Timeline: NextPage = () => {
         alignItems="center"
         justifyContent="center"
       >
-        Phillip
       </Flex>
     );
   };

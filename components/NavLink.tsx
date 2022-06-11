@@ -17,7 +17,7 @@ export default function NavLink({
       <ChakraLink
         px={2}
         py={1}
-        border={isActive ? "2px solid #ff944d" : ""}
+        border={isActive ? "2px solid #ff944d" : "2px solid transparent"}
         rounded={"lg"}
         _hover={{
           textDecoration: "none",
