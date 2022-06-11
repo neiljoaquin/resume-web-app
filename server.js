@@ -25,7 +25,7 @@ app.prepare().then(() => {
     //   } else {
     //     await handle(req, res, parsedUrl)
     //   }
-
+      console.log(`Got request: ${pathname}`) 
       await handle(req, res, parsedUrl)
     } catch (err) {
       console.error('Error occurred handling', req.url, err)

@@ -1,38 +1,24 @@
-import { ReactNode } from "react";
 import {
   Box,
   Button,
   Center,
-  Container,
   Flex,
   HStack,
   IconButton,
-  Link,
   Stack,
   useColorMode,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import NavLink from "./NavLink";
 
-const Links = ["Timeline"];
+interface LinkItem {
+  text: string;
+  href: string;
+}
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("primaryAccent", "darkModeAccent"),
-    }}
-    href={"#"}
-    color={useColorModeValue("primaryText", "darkModeText")}
-    fontFamily="poppins"
-  >
-    {children}
-  </Link>
-);
+const Links: LinkItem[] = [{ text: "Timeline", href: "/timeline" }];
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -51,9 +37,9 @@ export default function NavBar() {
             alignItems={"center"}
             justifyContent={"space-between"}
           >
-
             <IconButton
-              w={{ base: 4 }} h={{ base: 9 }}
+              w={{ base: 4 }}
+              h={{ base: 9 }}
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
               aria-label={"Open Menu"}
               display={{ md: "none" }}
@@ -65,14 +51,14 @@ export default function NavBar() {
               spacing={{ base: 2, md: 4 }}
               display={{ md: "none" }}
             >
-              <NavLink>Neil</NavLink>
+              <NavLink href="/">Neil</NavLink>
               <Button w={{ base: 4 }} h={{ base: 9 }} onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
             </HStack>
 
             <Box display={{ base: "none", md: "flex" }}>
-              <NavLink>Neil</NavLink>
+              <NavLink href="/">Neil</NavLink>
             </Box>
 
             <HStack
@@ -81,7 +67,9 @@ export default function NavBar() {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink href={link.href} key={link.text}>
+                  {link.text}
+                </NavLink>
               ))}
               <Button w={{ base: 4 }} h={{ base: 9 }} onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
@@ -90,15 +78,16 @@ export default function NavBar() {
           </Flex>
 
           {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-
+            <Box pb={4} display={{ md: "none" }}>
+              <Stack as={"nav"} spacing={4}>
+                {Links.map((link) => (
+                  <NavLink href={link.href} key={link.text}>
+                    {link.text}
+                  </NavLink>
+                ))}
+              </Stack>
+            </Box>
+          ) : null}
         </Box>
       </Center>
     </Box>
