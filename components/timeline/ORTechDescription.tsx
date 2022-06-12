@@ -31,7 +31,7 @@ export default function ORTechDescription() {
           "The pipelines for embedded devices and mobile apps (Android and iOS) are used to automate development, testing and deployment."
         }
         tech={"Tech used:"}
-        techUsed={"Jenkins and Bitrise"}
+        techUsed={"Docker, Jenkins and Bitrise"}
       />
 
       <DescriptionSection

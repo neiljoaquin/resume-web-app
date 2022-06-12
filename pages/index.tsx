@@ -4,7 +4,7 @@ import { Text } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   return (
-    <Flex h="90vh" alignItems="center" justifyContent="center">
+    <Flex h="85vh" alignItems="center" justifyContent="center">
       <Center>
         <VStack spacing={2}>
           <Heading fontSize={{ base: "4xl", md: "6xl" }}>Neil Joaquin</Heading>
