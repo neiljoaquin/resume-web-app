@@ -43,8 +43,7 @@ export default function TimelineCard({
             />
           </Center>
         </Flex>
-        <Divider display={(isOpen && children != null) ? "md" : "none"} orientation="horizontal" />
-        <Box pt={2} display={(isOpen && children != null) ? "md" : "none"}>
+        <Box display={(isOpen && children != null) ? "md" : "none"}>
           {children}
         </Box>
       </Flex>

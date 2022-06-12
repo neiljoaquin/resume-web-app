@@ -56,7 +56,7 @@ const Timeline: NextPage = () => {
                 "Graduated from University of the Philippines - Diliman"
               }
             >
-                <Text fontSize={"sm"}>Bachelor of Science in Computer Science</Text>
+                <Text pt={3} fontSize={"sm"}>Bachelor of Science in Computer Science</Text>
             </TimelineCard>
 
             <SamsungDescription/>
@@ -67,7 +67,7 @@ const Timeline: NextPage = () => {
                 "Worked as an Undergraduate Student Researcher at University of the Philippines - Diliman"
               }
             >
-                <Text fontSize={"sm"}>Algorithms and Complexity Laboratory</Text>
+                <Text pt={3} fontSize={"sm"}>Algorithms and Complexity Laboratory</Text>
             </TimelineCard>
           </VStack>
         </Flex>
