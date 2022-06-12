@@ -23,8 +23,6 @@ export default function NavLink({
           textDecoration: "none",
           bg: useColorModeValue("primaryAccent", "darkModeAccent"),
         }}
-        color={useColorModeValue("primaryText", "darkModeText")}
-        fontFamily="poppins"
       >
         {children}
       </ChakraLink>

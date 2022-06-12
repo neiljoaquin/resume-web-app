@@ -6,7 +6,6 @@ import {
   IconButton,
   Stack,
   useColorMode,
-  useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
@@ -23,12 +22,7 @@ export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box
-      bg={useColorModeValue("primaryBackground", "darkModeBackground")}
-      borderBottom="1px solid #ff944d"
-      w="100%"
-      position="absolute"
-    >
+    <Box borderBottom="1px solid #ff944d" w="100%">
       <Center>
         <Box w={{ base: "100%", md: "50%" }} px={4}>
           <Flex
@@ -50,7 +44,11 @@ export default function NavBar() {
               display={{ md: "none" }}
             >
               <NavLink href="/">Neil</NavLink>
-              <IconButton aria-label={"Change Theme"} size={"md"} onClick={toggleColorMode}>
+              <IconButton
+                aria-label={"Change Theme"}
+                size={"md"}
+                onClick={toggleColorMode}
+              >
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </IconButton>
             </HStack>
@@ -69,7 +67,11 @@ export default function NavBar() {
                   {link.text}
                 </NavLink>
               ))}
-              <IconButton aria-label={"Change Theme"} size={"md"} onClick={toggleColorMode}>
+              <IconButton
+                aria-label={"Change Theme"}
+                size={"md"}
+                onClick={toggleColorMode}
+              >
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </IconButton>
             </HStack>

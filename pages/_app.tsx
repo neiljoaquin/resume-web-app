@@ -18,8 +18,19 @@ const colors = {
 const theme = extendTheme({
   colors,
   fonts: {
+    body: `'Poppins', sans-serif`,
     poppins: `'Poppins', sans-serif`,
   },
+  styles: {
+    global: (props: { colorMode: string; }) => ({
+      'html, body': {
+        backgroundColor: props.colorMode === 'dark' ? '#26292e' : '#ffffff',
+      },
+      p: {
+        color: props.colorMode === 'dark' ? '#ffffff' : '#0d0d0d',
+      },
+    }),
+  }
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
