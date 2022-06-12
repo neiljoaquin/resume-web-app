@@ -22,7 +22,7 @@ export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box borderBottom="1px solid #ff944d" w="100%">
+    <Box borderBottomStyle={"solid"} borderBottomWidth={"1px"} borderColor={"neonAccent"} w="100%">
       <Center>
         <Box w={{ base: "100%", md: "50%" }} px={4}>
           <Flex
