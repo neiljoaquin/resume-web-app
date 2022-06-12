@@ -23,15 +23,6 @@ export default function PersonalWebDescription() {
           techUsed={"Nginx, Next.js, React, Chakra UI, Node.js"}
         />
       </Box>
-
-      <Divider />
-      <Box pt={"3"}>
-        <Text fontSize={"sm"}>
-          I know it&#39;s a little bit of an overkill to use Kubernetes on this
-          use case but I&#39;m just interested in Kubernetes and the
-          microservices architecture.
-        </Text>
-      </Box>
     </TimelineCard>
   );
 }
