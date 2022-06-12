@@ -25,7 +25,7 @@ export default function TimelineCard({
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box w={"100%"} borderWidth="1px" borderRadius="lg" borderColor={useColorModeValue("black", "white")} p={4}>
+    <Box w={"100%"} borderWidth="1px" borderRadius="lg" borderColor={useColorModeValue("black", "white")} p={6}>
       <Flex direction={"column"}>
         <Flex>
           <VStack align={"normal"}>
