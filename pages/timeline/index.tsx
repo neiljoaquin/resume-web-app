@@ -6,7 +6,6 @@ import {
   Text,
   VStack,
   Divider,
-  HStack,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import ORTechDescription from "../../components/timeline/ORTechDescription";
@@ -56,6 +55,7 @@ const Timeline: NextPage = () => {
                 "Graduated from University of the Philippines - Diliman"
               }
             >
+                <Divider></Divider>
                 <Text pt={3} fontSize={"sm"}>Bachelor of Science in Computer Science</Text>
             </TimelineCard>
 
@@ -66,7 +66,7 @@ const Timeline: NextPage = () => {
               description={
                 "Worked as an Undergraduate Student Researcher at University of the Philippines - Diliman"
               }
-            >
+            >   <Divider></Divider>
                 <Text pt={3} fontSize={"sm"}>Algorithms and Complexity Laboratory</Text>
             </TimelineCard>
           </VStack>
