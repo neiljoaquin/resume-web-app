@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   const router = useRouter();
   const isActive = router.pathname === "/";
   return (
-    <Flex h="75vh" alignItems="center" justifyContent="center">
+    <Flex alignItems="center" justifyContent="center" flex={"1"}>
       <SlideFade in={isActive} offsetY='20px'>
         <Center>
           <VStack spacing={2}>

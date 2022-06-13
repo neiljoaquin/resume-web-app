@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import NavBar from "../components/NavBar";
 import Head from "next/head";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme, Flex } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 
 const colors = {
@@ -39,9 +39,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Neil Joaquin</title>
       </Head>
       <ChakraProvider theme={theme}>
-        <NavBar />
-        <Component {...pageProps} />
-        <Footer />
+        <Flex minH={"100vh"} direction={"column"}>
+          <NavBar/>
+          <Component {...pageProps} />
+          <Footer/>
+        </Flex>
       </ChakraProvider>
     </div>
   );
