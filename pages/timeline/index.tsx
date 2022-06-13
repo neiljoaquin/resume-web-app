@@ -25,7 +25,7 @@ const Timeline: NextPage = () => {
       alignItems={"center"}
       justifyContent={"center"}
     >
-      <Center h="100%" w={{ base: "100%", md: "50%" }} p={4} pb={10}>
+      <Center h="100%" w={{ base: "100%", md: "50%" }} maxW={700} p={4} pb={10}>
         <Flex
           alignItems={"normal"}
           h="100%"
@@ -54,7 +54,7 @@ const Timeline: NextPage = () => {
                 date={"2019 July"}
                 description={"Moved to Australia"}
               >
-                  
+
               </TimelineCard>
 
               <TimelineCard

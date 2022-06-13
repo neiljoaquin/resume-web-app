@@ -1,16 +1,16 @@
 import { Box, Divider, VStack, Text } from "@chakra-ui/react";
-import TechUsedComponent from "./TechUsedComponent";
+import { TechUsedComponent, TechUsedItem } from "./TechUsedComponent";
 
-export default function DescriptionSection({
-  product,
-  description,
-  tech,
-  techUsed,
-}: {
+export interface DescriptionItem {
   product: string;
   description: string;
-  tech: string;
-  techUsed: string
+  techUseditem: TechUsedItem;
+}
+
+export function DescriptionSection({
+  descriptionItem,
+}: {
+  descriptionItem: DescriptionItem;
 }) {
   return (
     <Box>
@@ -18,16 +18,13 @@ export default function DescriptionSection({
       <VStack align={"normal"} spacing={3} pt={3}>
         <VStack align={"normal"} spacing={2}>
           <Text fontSize={"sm"} fontWeight={"bold"}>
-            {product}
+            {descriptionItem.product}
           </Text>
           <Text fontSize={"sm"} pl={"3"}>
-            {description}
+            {descriptionItem.description}
           </Text>
         </VStack>
-        <TechUsedComponent
-          tech={tech}
-          techUsed={techUsed}
-        />
+        <TechUsedComponent techUsedItem={descriptionItem.techUseditem} />
       </VStack>
     </Box>
   );

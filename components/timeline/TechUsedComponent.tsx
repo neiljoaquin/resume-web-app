@@ -1,20 +1,36 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { HStack, Tag } from "@chakra-ui/react";
 
-export default function TechUsedComponent({
-    tech,
-    techUsed
-} : {
-    tech: string;
-    techUsed: string;
+export interface TechUsedItem {
+  tech: string;
+  techUsed: string[];
+}
+
+export function TechUsedComponent({
+  techUsedItem,
+}: {
+  techUsedItem: TechUsedItem;
 }) {
   return (
-    <HStack>
-      <Text fontSize={"sm"} w={"100%"}>
-        {tech}
-      </Text>
-      <Text fontSize={"sm"} w={"100%"}>
-        {techUsed}
-      </Text>
+    <HStack
+      pb={1}
+      align={"normal"}
+      shouldWrapChildren={true}
+      wrap={"wrap"}
+      justify={"normal"}
+      spacing={1}
+    >
+      {/* <Text fontSize={"sm"}>{techUsedItem.tech}</Text> */}
+      {techUsedItem.techUsed.map((item) => (
+        <Tag
+          variant="subtle"
+          size={"sm"}
+          colorScheme={"orange"}
+          borderRadius={"md"}
+          key={item}
+        >
+          {item}
+        </Tag>
+      ))}
     </HStack>
   );
 }
