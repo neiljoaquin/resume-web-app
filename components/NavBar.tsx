@@ -1,6 +1,7 @@
 import {
   Box,
   Center,
+  Collapse,
   Flex,
   HStack,
   IconButton,
@@ -22,7 +23,12 @@ export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box borderBottomStyle={"solid"} borderBottomWidth={"1px"} borderColor={"neonAccent"} w="100%">
+    <Box
+      borderBottomStyle={"solid"}
+      borderBottomWidth={"1px"}
+      borderColor={"neonAccent"}
+      w="100%"
+    >
       <Center>
         <Box w={{ base: "100%", md: "50%" }} px={4}>
           <Flex
@@ -77,17 +83,19 @@ export default function NavBar() {
             </HStack>
           </Flex>
 
-          {isOpen ? (
-            <Box pb={2} display={{ md: "none" }}>
-              <Stack as={"nav"} spacing={4}>
-                {Links.map((link) => (
-                  <NavLink href={link.href} key={link.text}>
-                    {link.text}
-                  </NavLink>
-                ))}
-              </Stack>
-            </Box>
-          ) : null}
+          <Collapse in={isOpen} unmountOnExit={true}>
+            {isOpen ? (
+              <Box pb={2} display={{ md: "none" }}>
+                <Stack as={"nav"} spacing={4}>
+                  {Links.map((link) => (
+                    <NavLink href={link.href} key={link.text}>
+                      {link.text}
+                    </NavLink>
+                  ))}
+                </Stack>
+              </Box>
+            ) : null}
+          </Collapse>
         </Box>
       </Center>
     </Box>

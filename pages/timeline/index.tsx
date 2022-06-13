@@ -6,14 +6,18 @@ import {
   Text,
   VStack,
   Divider,
+  SlideFade,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import ORTechDescription from "../../components/timeline/ORTechDescription";
 import PersonalWebDescription from "../../components/timeline/PersonalWebDescription";
 import SamsungDescription from "../../components/timeline/SamsungDescription";
 import TimelineCard from "../../components/timeline/TimelineCard";
 
 const Timeline: NextPage = () => {
+  const router = useRouter();
+  const isActive = router.pathname === "/timeline";
   return (
     <Flex
       h={"fit-content"}
@@ -30,46 +34,57 @@ const Timeline: NextPage = () => {
           direction={"column"}
           pt={4}
         >
-          <Box
-            w="fit-content"
-            borderBottomStyle={"solid"}
-            borderBottomWidth={"2px"}
-            borderColor={"neonAccent"}
-          >
-            <Heading fontSize={{ base: "3xl", md: "3xl" }}>Timeline</Heading>
-          </Box>
-
-          <VStack pt={6} spacing={"4"}>
-            <PersonalWebDescription/>
-            <ORTechDescription/>
-
-            <TimelineCard
-              date={"2019 July"}
-              description={"Moved to Australia"}
+          <SlideFade in={isActive} offsetY="20px">
+            <Box
+              w="fit-content"
+              borderBottomStyle={"solid"}
+              borderBottomWidth={"2px"}
+              borderColor={"neonAccent"}
             >
-            </TimelineCard>
+              <Heading fontSize={{ base: "3xl", md: "3xl" }}>Timeline</Heading>
+            </Box>
+          </SlideFade>
 
-            <TimelineCard
-              date={"2017 January"}
-              description={
-                "Graduated from University of the Philippines - Diliman"
-              }
-            >
+          <SlideFade in={isActive} offsetY="20px">
+            <VStack pt={6} spacing={"4"}>
+              <PersonalWebDescription />
+              <ORTechDescription />
+
+              <TimelineCard
+                date={"2019 July"}
+                description={"Moved to Australia"}
+              >
+                  
+              </TimelineCard>
+
+              <TimelineCard
+                date={"2017 January"}
+                description={
+                  "Graduated from University of the Philippines - Diliman"
+                }
+              >
                 <Divider></Divider>
-                <Text pt={3} fontSize={"sm"}>Bachelor of Science in Computer Science</Text>
-            </TimelineCard>
+                <Text pt={3} fontSize={"sm"}>
+                  Bachelor of Science in Computer Science
+                </Text>
+              </TimelineCard>
 
-            <SamsungDescription/>
+              <SamsungDescription />
 
-            <TimelineCard
-              date={"2015 August - 2016 June"}
-              description={
-                "Worked as an Undergraduate Student Researcher at University of the Philippines - Diliman"
-              }
-            >   <Divider></Divider>
-                <Text pt={3} fontSize={"sm"}>Algorithms and Complexity Laboratory</Text>
-            </TimelineCard>
-          </VStack>
+              <TimelineCard
+                date={"2015 August - 2016 June"}
+                description={
+                  "Worked as an Undergraduate Student Researcher at University of the Philippines - Diliman"
+                }
+              >
+                {" "}
+                <Divider></Divider>
+                <Text pt={3} fontSize={"sm"}>
+                  Algorithms and Complexity Laboratory
+                </Text>
+              </TimelineCard>
+            </VStack>
+          </SlideFade>
         </Flex>
       </Center>
     </Flex>

@@ -19,7 +19,7 @@ export default function ORTechDescription() {
       <DescriptionSection
         product={"Embedded Devices:"}
         description={
-          'Organic Response\'s main product that is mainly used for IoTlighting. We also refer to them as "nodes".'
+          'Organic Response\'s main product that is mainly used for IoT lighting. We also refer to them as "nodes".'
         }
         tech={"Tech used:"}
         techUsed={"C and Wirepas tech stack"}
