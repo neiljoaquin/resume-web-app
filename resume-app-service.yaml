@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: resume-app
   namespace: free-ns
-  uid: 5a310118-32b9-44e9-b6dc-6f37e81f2e7e
 spec:
   ipFamilies:
   - IPv4

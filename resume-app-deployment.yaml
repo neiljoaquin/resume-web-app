@@ -5,7 +5,6 @@ metadata:
     app: resume-app
   name: resume-app
   namespace: free-ns
-  uid: a0739214-9e05-4046-8669-811e17dd9641
 spec:
   progressDeadlineSeconds: 600
   replicas: 2
