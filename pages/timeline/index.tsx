@@ -25,7 +25,7 @@ const Timeline: NextPage = () => {
       alignItems={"center"}
       justifyContent={"center"}
     >
-      <Center w={{ base: "100%", md: "50%" }} maxW={700} p={4} pb={10}>
+      <Center w={{ base: "100%", md: "60%" }} maxW={900} p={4} pb={10}>
         <Flex
           alignItems={"normal"}
           h="100%"

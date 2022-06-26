@@ -26,6 +26,7 @@ app.prepare().then(() => {
     //     await handle(req, res, parsedUrl)
     //   }
       console.log(`Got request: ${pathname}`) 
+      console.log(`POD IP ADDR: ${process.env.POD_IP}`)
       await handle(req, res, parsedUrl)
     } catch (err) {
       console.error('Error occurred handling', req.url, err)

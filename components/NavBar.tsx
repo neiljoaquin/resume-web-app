@@ -30,7 +30,7 @@ export default function NavBar() {
       w="100%"
     >
       <Center>
-        <Box w={{ base: "100%", md: "50%" }} maxW={700} px={4}>
+        <Box w={{ base: "100%", md: "60%" }} maxW={900} px={4}>
           <Flex
             h={{ base: 14, md: 16 }}
             alignItems={"center"}

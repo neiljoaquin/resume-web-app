@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Head from "next/head";
 import { ChakraProvider, extendTheme, Flex } from "@chakra-ui/react";
 import Footer from "../components/Footer";
+import { useRouter } from "next/router";
 
 const colors = {
   primaryBackground: "#ffffff",
@@ -32,11 +33,23 @@ const theme = extendTheme({
   },
 });
 
+function getPageName(pathname: string): string {
+  switch (pathname) {
+    case "/":
+      return "Home"
+    case "/timeline":
+      return "Timeline"
+    default:
+      return "Home"
+  }
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   return (
     <div>
       <Head>
-        <title>Neil Joaquin</title>
+        <title>{getPageName(router.pathname)} | Neil Joaquin</title>
       </Head>
       <ChakraProvider theme={theme}>
         <Flex minH={"100vh"} direction={"column"}>
