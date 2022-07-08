@@ -18,7 +18,7 @@ const Home: NextPage = () => {
             </Heading>
             <Text fontSize={{ base: "sm", md: "xl" }}>Melbourne Based</Text>
             <Text fontSize={{ base: "sm", md: "xl" }} pb={1}>
-              Software Developer | Gamer | Gin Lover
+              Software Engineer | Gamer | Gin Lover
             </Text>
             <a
               target="_blank"
