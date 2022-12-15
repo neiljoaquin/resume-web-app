@@ -5,4 +5,4 @@ steps:
     if: build.branch == "main"
     commands: 
       - sudo docker login -u neiljoaquin -p dckr_pat_519Q3oi7GugN8EM07IvHWLbSb2M
-      - docker push neiljoaquin/resume-app:1
+      - sudo docker push neiljoaquin/resume-app:1
