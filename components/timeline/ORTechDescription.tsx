@@ -3,6 +3,16 @@ import TimelineCard from "./TimelineCard";
 
 const descriptions: DescriptionItem[] = [
   {
+    product: "Web Portal:",
+    description:
+      "The web app portal is like the central hub of the IoT system where all of the node's data are collected. We can also use this to interface with the nodes remotely.",
+    techUseditem: {
+      tech: "Tech used:",
+      techUsed: ["Java", "Spring Boot","Hibernate","MyBatis","PostgreSQL","Kubernetes","Kafka"],
+    },
+  },
+
+  {
     product: "Android and iOS apps:",
     description:
       "Apps were mainly used to interface with the nodes using technologies such as IR, BLE and NFC.",
@@ -29,16 +39,6 @@ const descriptions: DescriptionItem[] = [
     techUseditem: {
       tech: "Tech used:",
       techUsed: ["Python", "Rigado Tech Stack"],
-    },
-  },
-
-  {
-    product: "Web Portal:",
-    description:
-      "The web app portal is like the central hub of the IoT system where all of the node's data are collected. We can also use this to interface with the nodes remotely.",
-    techUseditem: {
-      tech: "Tech used:",
-      techUsed: ["Java", "Spring Boot","Hibernate"],
     },
   },
 ];
