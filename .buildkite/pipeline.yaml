@@ -1,7 +1,11 @@
 steps:
   - label: "Build docker image"
-    command: sudo docker build -t neiljoaquin/resume-app:latest .
+    key: "build"
+    command: sudo docker build -t neiljoaquin/resume-app:1 .
+  
   - label: "Push to prod"
+    key: "push_to_prod"
+    depends_on: "build"
     if: build.branch == "main"
     commands: 
       - sudo docker login -u neiljoaquin -p dckr_pat_519Q3oi7GugN8EM07IvHWLbSb2M
