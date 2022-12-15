@@ -2,5 +2,5 @@ steps:
   - label: "Build docker image"
     command: sudo docker build -t neiljoaquin/resume-app:latest .
   - label: "Push to prod"
-    if: build.branch != "main"
+    if: build.branch == "main"
     command: echo "Hello"
